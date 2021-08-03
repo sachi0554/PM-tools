@@ -14,3 +14,7 @@ cmd-> pip install -r requirements.txt
 cmd-> py manage.py runserver 
 
 note- make sure active directory will be src/
+
+
+## update requirements.text  file 
+cmd-> pip freeze > requirements.txt
