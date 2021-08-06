@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'rest_framework',
      #user app
     'account',
+    'project',
+    'team'
 
 ]
 
@@ -167,6 +169,7 @@ JWT_AUTH = {
     'JWT_ALLOW_REFRESH': True,
     'JWT_EXPIRATION_DELTA': datetime.timedelta(days=356),
     'JWT_SECRET_KEY': SECRET_KEY,
+    'JWT_AUTH_HEADER_PREFIX': 'Bearer',
 }
 
 
