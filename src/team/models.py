@@ -13,7 +13,7 @@ class Team(models.Model):
 
 
     @property
-    def comments(self):
+    def Member(self):
         instance = self
         qs = Member.objects.filter_by_instance(instance)
         return qs
@@ -23,7 +23,7 @@ class MemberManager(models.Manager):
 
     def filter_by_instance(self, instance):
         obj_id = instance.id
-        qs = super(self).filter(team= obj_id).filter(parent=None)
+        qs = super(MemberManager, self).filter(team= obj_id)
         return qs
 
 class Member(models.Model):

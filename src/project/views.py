@@ -1,6 +1,6 @@
   
 from django.db.models import Q
-from rest_framework.generics import (CreateAPIView, ListAPIView)
+from rest_framework.generics import (CreateAPIView, ListAPIView,RetrieveAPIView)
 from rest_framework.permissions import (IsAuthenticated,AllowAny)
 
 from rest_framework.filters import (
@@ -8,7 +8,7 @@ from rest_framework.filters import (
         OrderingFilter,
     )
 from .models import Project
-from .serializer import (ProjectCreateUpdateSerializer,ProjectListSerializer)
+from .serializer import (ProjectCreateUpdateSerializer, ProjectDetailSerializer,ProjectListSerializer)
 
 # Create your views here.
 class ProjectCreateAPIView(CreateAPIView):
@@ -37,3 +37,12 @@ class ProjectListAPIView(ListAPIView):
                     Q(title__icontains=query)
                     ).distinct()
         return queryset_list
+
+
+
+
+class ProjectDetailAPIView(RetrieveAPIView):
+    queryset = Project.objects.all()
+    serializer_class = ProjectDetailSerializer
+    lookup_field = 'id'
+    permission_classes = [IsAuthenticated]

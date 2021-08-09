@@ -43,7 +43,8 @@ INSTALLED_APPS = [
      #user app
     'account',
     'project',
-    'team'
+    'team',
+    'projectcycle'
 
 ]
 
