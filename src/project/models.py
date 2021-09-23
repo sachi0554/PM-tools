@@ -1,6 +1,8 @@
 from django.db import models
 from django.conf import settings
 from django.utils import timezone
+
+from team.models import Team
 from projectcycle.models import ProjectCycle
 # Create your models here.
 
@@ -30,4 +32,11 @@ class Project(models.Model):
     def ProjectCycle(self):
         instance = self
         qs = ProjectCycle.objects.filter_by_instance(instance)
+        return qs
+
+        
+    @property
+    def Team(self):
+        instance = self
+        qs = Team.objects.filter_by_instance(instance)
         return qs
