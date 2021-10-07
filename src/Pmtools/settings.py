@@ -178,8 +178,14 @@ JWT_AUTH = {
 
 SECRET_KEY = "adsadasdasdasdasdasdasdasdasdasd"
 
-CORS_ALLOW_ALL_ORIGINS = True 
-CORS_ALLOW_CREDENTIALS = True
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',
-] # If this is used, then not 
+
+ 
+               
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ORIGIN_WHITELIST = (
+
+       'http://d48a-106-215-46-160.ngrok.io','http://localhost:3000'
+
+)
+ 

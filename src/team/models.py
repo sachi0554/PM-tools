@@ -39,14 +39,17 @@ class MemberManager(models.Manager):
 
 class Member(models.Model):
     dev_type = [
-        ('Front Developer', 'front_end_dev'),
-        ('Back End Developer', 'back_end_dev'),
-        ('Team Lead', 'team_lead'),
-        ('Technical Head', 'technical_head'),
-        ('Project Manager', 'project_manage'),
-        ('DevOps', 'devOps'),
-        ('Database Designer', 'database_designer'),
-        ('Support Team', 'support_team'),
+        ('Front Developer', 'Front Developer'),
+        ('Back End Developer', 'Back End Developer'),
+        ('Team Lead', 'Team Lead'),
+        ('Technical Head', 'Technical Head'),
+        ('Project Manager', 'Project Manager'),
+        ('DevOps', 'DevOps'),
+        ('Database Engineer', 'Database Engineer'),
+        ('Solution Architecture', 'Solution Architecture'),
+         ('QA', 'QA'),
+        ('Support Team', 'Support Team'),
+         ('Business Annalists', 'Business Annalists'),
      ]
     dev_work_type = [
         ('Full Time', 'full_time'),
@@ -55,8 +58,10 @@ class Member(models.Model):
 
     dev_working_hours =[
         ('8 Hours', '8'),
+        ('6 Hours', '6'),
         ('4 Hours', '4'),
-        ('10 Hours', '8'),
+        ('10 Hours', '10'),
+         ('2 Hours', '2'),
     ]
 
     team =models.ForeignKey(Team, default=1, on_delete=models.CASCADE)
